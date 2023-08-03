@@ -1,0 +1,18 @@
+# .air.toml
+
+# List of directories to watch for changes
+# By default, air monitors the directory the config file is located in
+# You can specify additional directories to watch here
+root = "."
+tmp_dir = "tmp"
+
+# Build and run commands for your application
+[build]
+  # By default, air uses "go build" to build your application
+  # If you need custom build flags or commands, specify them here
+  cmd = "go build -o ./tmp/main.exe ."
+
+[run]
+  # By default, air uses "./your-app" to run your application
+  # If you have a custom binary name or other run commands, specify them here
+  cmd = "./tmp/main"
