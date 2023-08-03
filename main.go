@@ -1,8 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"log"
+	"fmt"
+
+	"github.com/devcodeai/collaborative-core-golang/Routes"
+	"github.com/devcodeai/collaborative-core-golang/Utils"
 
 	"github.com/joho/godotenv"
 )
@@ -13,5 +16,10 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
-	fmt.Println("Hello, world!")
+	HOST := Utils.EnvConfig("HOST", "0.0.0.0")
+	PORT := Utils.EnvConfig("PORT", "3030")
+	SERVER_URL := fmt.Sprintf("%v:%v", HOST, PORT)
+
+	router := Routes.SetupRouter()
+	router.Run(SERVER_URL)
 }
