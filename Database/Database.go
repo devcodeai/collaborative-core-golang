@@ -36,7 +36,7 @@ func ConnectDatabase(db_url string) {
 		panic(err)
 	}
 
-	// database tables migration 
+	// database tables migration
 	database.AutoMigrate(&Models.Company{})
 	database.AutoMigrate(&Models.Product{})
 	database.AutoMigrate(&Models.Campus{})
