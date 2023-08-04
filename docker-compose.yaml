@@ -1,0 +1,26 @@
+version: '1'
+services:
+  mysql:
+    image: mysql:8.0
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_DATABASE=devcode
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - go-mysql-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 15s
+      retries: 10
+  backend-api-service: 
+    image: collaborative-core-golang:1.6
+    restart: always
+    ports:
+      - 3032:3030
+    depends_on:
+      mysql:
+        condition: service_healthy
+volumes:
+  go-mysql-db:
+    driver: local
