@@ -1,5 +1,9 @@
 # Collaborative Core API (Golang)
-> Description here
+> The **Collaborative Core API** is supported with **Golang** and contains the following services:
+> * `Company Services`
+> * `Campus Services`
+> * `Talent Services`
+> * `Community Services`
 
 ## Table of Contents
 * [Requirements](#requirements)
