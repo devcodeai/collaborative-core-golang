@@ -60,11 +60,11 @@ func SetupRouter() *gin.Engine {
 		routerGroup.DELETE("/talents/:id", TalentServicesControllers.DeleteTalentById)
 		// CommunityServices
 		// > CommunityController
-		routerGroup.GET("/talents", CommunityServicesControllers.GetCommunities)
-		routerGroup.GET("/talents/:id", CommunityServicesControllers.GetCommunityById)
-		routerGroup.POST("/talents", CommunityServicesControllers.CreateCommunity)
-		routerGroup.PUT("/talents/:id", CommunityServicesControllers.UpdateCommunityById)
-		routerGroup.DELETE("/talents/:id", CommunityServicesControllers.DeleteCommunityById)
+		routerGroup.GET("/communities", CommunityServicesControllers.GetCommunities)
+		routerGroup.GET("/communities/:id", CommunityServicesControllers.GetCommunityById)
+		routerGroup.POST("/communities", CommunityServicesControllers.CreateCommunity)
+		routerGroup.PUT("/communities/:id", CommunityServicesControllers.UpdateCommunityById)
+		routerGroup.DELETE("/communities/:id", CommunityServicesControllers.DeleteCommunityById)
 	}
 	return router
 }
