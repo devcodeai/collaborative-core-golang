@@ -28,25 +28,25 @@
 
 ## Run Program
 * Using Local Machine (Windows)
-    * Create new database (on MYSQL) as `<database_name>`
-    * Copy `.env.example` to `.env` 
-      * Update `MYSQL_DBNAME` configuration as `<database_name>`
-      * Update `MYSQL_PASSWORD` configuration as `<your_mysql_password>`
-    * Download dependencies from `go.mod` and `go.sum`
-      
-      ```
-      go mod download
-      ```
-    * Start the program
-      
-      ```
-      go run main.go
-      ```
-    * Open the path on your local machine
-      
-      ```
-      http://localhost:3030/api/
-      ```
+  * Create new database (on MYSQL) as `<database_name>`
+  * Copy `.env.example` to `.env` 
+    * Update `MYSQL_DBNAME` configuration as `<database_name>`
+    * Update `MYSQL_PASSWORD` configuration as `<your_mysql_password>`
+  * Download dependencies from `go.mod` and `go.sum`
+    
+    ```
+    go mod download
+    ```
+  * Start the program
+    
+    ```
+    go run main.go
+    ```
+  * Open the path on your local machine
+    
+    ```
+    http://localhost:3030/api/
+    ```
 
 * Using Docker 
   * Copy `.env.example` to `.env` 
