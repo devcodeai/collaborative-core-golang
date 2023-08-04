@@ -20,6 +20,10 @@ func SetupRouter() *gin.Engine {
 				"message": "Welcome to the Collaborative Core API (Go)!",
 			})
 		})
+		// CompanyServices
+		// CampusServices
+		// TalentServices
+		// CommunityServices
 	}
 	return router
 }
