@@ -32,7 +32,7 @@ func GetDatabaseURL(
 func ConnectDatabase(db_url string) {
 	database, err := gorm.Open(mysql.Open(db_url))
 	if err != nil {
-		fmt.Println("Error: ", err)
+		fmt.Println("[DATABASE] Error: ", err)
 		panic(err)
 	}
 
@@ -46,5 +46,5 @@ func ConnectDatabase(db_url string) {
 
 	DB = database
 
-	println("Database Connected Successfully!")
+	println("[DATABASE] Database Connected Successfully!")
 }
