@@ -29,7 +29,7 @@
 ## Run Program
 * Using Local Machine (Windows)
     * Create new database (on MYSQL) as `<database_name>`
-    * Copy `.env.example` to `env` 
+    * Copy `.env.example` to `.env` 
       * Update `MYSQL_DBNAME` configuration as `<database_name>`
       * Update `MYSQL_PASSWORD` configuration as `<your_mysql_password>`
     * Download dependencies from `go.mod` and `go.sum`
@@ -49,11 +49,12 @@
       ```
 
 * Using Docker 
-    * Build the Backend API Service docker image. If you don't specify the `<tag>`, it will be tagged as `latest` by default
+  * Copy `.env.example` to `.env` 
+  * Build the Backend API Service docker image. If you don't specify the `<tag>`, it will be tagged as `latest` by default
 
-      ```
-      docker build -t <image_name>:<tag> .
-      ```
+    ```
+    docker build -t <image_name>:<tag> .
+    ```
   * Configure `docker-compose.yaml`, adjust the script below according to your built docker image
 
     ```
@@ -62,10 +63,10 @@
       image: <image_name>:<tag>
       restart: always
       ports:
-        - 3031:3030
+        - 3032:3030
     ...
     ```
-  * Run `docker-compose.yaml` file, it may take a few minutes and re-attempts. It works fine, solely wait for the `Server run on http://0.0.0.0:3030` comes out
+  * Run `docker-compose.yaml` file, it may take a few minutes and re-attempts. It works fine, solely wait for the `[SERVER] Server to be run on http://0.0.0.0:3030/api` comes out
 
     ```
     docker-compose -f docker-compose.yaml up
@@ -73,7 +74,7 @@
   * Open the path on your local machine
       
     ```
-    http://localhost:3031/api/
+    http://localhost:3032/api/
     ```
 
 ## Unit Testing
