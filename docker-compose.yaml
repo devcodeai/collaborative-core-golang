@@ -14,10 +14,10 @@ services:
       timeout: 15s
       retries: 10
   backend-api-service: 
-    image: collaborative-core-golang:1.6
+    image: collaborative-core-go
     restart: always
     ports:
-      - 3032:3030
+      - 8080:3030
     depends_on:
       mysql:
         condition: service_healthy
